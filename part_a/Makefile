@@ -21,10 +21,10 @@ clean:
 OBJS=$(PPM_OBJ) $(OBJDIR)/tasksys.o
 
 $(APP_NAME): clean dirs $(OBJS)
-	$(CXX) ../tests/main.cpp $(CXXFLAGS) -o $@ $(OBJDIR)/tasksys.o -lm -lpthread
+	$(CXX) ../tests/main.cpp $(CXXFLAGS) -o $@ $(OBJDIR)/tasksys.o -lm -lpthread -g
 
 $(OBJDIR)/%.o: $(COMMONDIR)/%.cpp
-	$(CXX) $< $(CXXFLAGS) -c -o $@
+	$(CXX) $< $(CXXFLAGS) -c -o $@ -g
 
 $(OBJDIR)/%.o: %.cpp
-	$(CXX) $< $(CXXFLAGS) -c -o $@
+	$(CXX) $< $(CXXFLAGS) -c -o $@ -g

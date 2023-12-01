@@ -1,7 +1,7 @@
 #include <condition_variable>
 #include <mutex>
 #include <thread>
-
+#include <iostream>
 #include <stdio.h>
 
 /*
@@ -62,6 +62,7 @@ void mutex_example() {
 /*
  * Wrapper class around a counter, a condition variable, and a mutex.
  */
+
 class ThreadState {
     public:
         std::condition_variable* condition_variable_;
