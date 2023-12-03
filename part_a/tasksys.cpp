@@ -275,7 +275,6 @@ void TaskSystemParallelThreadPoolSleeping::threadRunTask() {
                 queue_cv_.notify_all();
             }
         }
-
     }
 }
 

@@ -121,12 +121,12 @@ class TaskSystemParallelThreadPoolSleeping: public ITaskSystem {
         void sync();
         void threadRunTask();
     private:
-        std::condition_variable queue_cv_;
-        std::mutex queue_mt_;
-        std::vector<std::thread> threads_;
-        std::queue<int> task_queue_;
-        sleepState* sleepstate_;
-        bool killed_;
+            std::condition_variable queue_cv_;
+            std::mutex queue_mt_;
+            std::vector<std::thread> threads_;
+            std::queue<int> task_queue_;
+            sleepState* sleepstate_;
+            bool killed_;
 };
 
 #endif
