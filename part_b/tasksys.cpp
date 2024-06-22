@@ -54,6 +54,8 @@ TaskSystemParallelSpawn::TaskSystemParallelSpawn(int num_threads): ITaskSystem(n
     // NOTE: CS149 students are not expected to implement TaskSystemParallelSpawn in Part B.
 }
 
+
+
 TaskSystemParallelSpawn::~TaskSystemParallelSpawn() {}
 
 void TaskSystemParallelSpawn::run(IRunnable* runnable, int num_total_tasks) {
@@ -217,9 +219,11 @@ void TaskSystemParallelThreadPoolSleeping::threadRunTaskWithDep(){
                             it++;
                         }
                     }
-                }else{
-                    run_cv_->notify_all();
                 }
+                run_cv_->notify_all();
+//                else{
+//                    run_cv_->notify_all();
+//                }
             }
             if(ready_tasks_.empty() && waiting_tasks_.empty()){
                 finish_cv_->notify_one();
