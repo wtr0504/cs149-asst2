@@ -279,6 +279,7 @@ void TaskSystemParallelThreadPoolSleeping::sync() {
     //
     // TODO: CS149 students will modify the implementation of this method in Part B.
     //
+
     std::unique_lock<std::mutex> lk(*run_mt_);
     finish_cv_->wait(lk,[this]{return ready_tasks_.empty()&&waiting_tasks_.empty();});
 
